@@ -1,0 +1,408 @@
+/**
+ * Basic HTML Tag Styles --------------------
+ */
+body {
+  font: 400 1.125rem/1.3 'Titillium Web', Arial, sans-serif;
+  background: #888;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Border box on main structural elements */
+header,
+article,
+aside,
+footer,
+div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:hover,
+a:visited {
+  color: #1e32c8;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0;
+  padding: .5em 0 .8em;
+  font-size: 1.8em;
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 0;
+  padding: .4em 0 0;
+  font-size: 1.1em;
+}
+
+
+/**
+ * Main Page Elements ---------------------
+ */
+.page-wrapper {
+  background: #fff;
+  padding: .2em .8em;
+  margin: 0 auto;
+}
+
+.menu,
+.menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  padding: .25em .5em;
+}
+
+/* Cover up yer floats */
+header.main-header,
+#content,
+aside.secondary,
+footer {
+  overflow: hidden;
+}
+
+/**
+ * Main elements --------------
+ */
+header.main-header,
+#content,
+footer,
+aside article {
+  background: #eee;
+  clear: both;
+  padding: 1em;
+  margin: 0 0 .8em;
+}
+
+header.main-header,
+#content,
+footer {
+  clear: both;
+}
+
+aside article p {
+  margin-top: .3em;
+  font-size: .9em;
+}
+
+article img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/**
+ * Header ------------------
+ */
+.main-header h1 {
+  background: white url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/43724/veridian.png) no-repeat 2% center;
+  padding: 0;
+  -webkit-background-size: auto 90%;
+  background-size: auto 90%;
+  float: left;
+  border: 1px solid #aaa;
+  border-radius: .3em;
+  font-size: 1.5em;
+}
+
+.main-header h1 a {
+  display: block;
+  padding: .5em .5em .5em 2.2em;
+  line-height: 1;
+  color: #000;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #fff, 3px 3px 0 #ccc;
+}
+
+.main-header li {
+  font-size: 1.2em;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+.main-header ul.menu li a {
+  color: black;
+  text-shadow: -2px -2px 0 #fff;
+}
+
+
+/**
+ * Responsive Debug message
+ */
+.page-wrapper:before {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: .7em 1em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  line-height: 1;
+  font-weight: 600;
+}
+
+
+/** 
+ * Two Column Layout ----------------------
+ */
+@media (min-width: 769px) {
+  #content {
+    width: 65%;
+  }
+
+  aside.secondary {
+    width: 35%;
+    padding: 0 0 0 1em;
+  }
+
+  #content,
+  aside.secondary {
+    float: left;
+  }
+}
+
+
+/**
+ * Large Desktop --------------------------
+ */
+@media (min-width: 1201px) {
+  .page-wrapper:before {
+    content: 'Large Desktop';
+  }
+
+  .page-wrapper {
+    width: 1150px;
+  }
+
+  .main-header h1 {
+    font-size: 2em;
+  }
+
+  .main-header .menu li a {
+    font-size: 1.2em;
+  }
+
+  #content {
+    width: 60%;
+  }
+
+  aside.secondary {
+    width: 40%;
+  }
+
+  aside.secondary article {
+    clear: none;
+    float: left;
+    width: 50%;
+  }
+}
+
+
+/**
+ * Regular Desktop -----------------------
+ */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .page-wrapper:before {
+    content: 'Regular Desktop';
+  }
+
+  .page-wrapper {
+    max-width: 980px;
+  }
+}
+
+
+/**
+ * Tablet Landscape ----------------------
+ */
+@media (min-width: 769px) and (max-width: 992px) {
+  .page-wrapper:before {
+    content: 'Tablet Landscape';
+  }
+  
+  .main-header h1 {
+    font-size: 1.2em;
+  }
+  
+  #header nav li a {
+    font-size: .8em;
+    line-height: 2.8;
+  }
+  
+}
+
+/**
+ * Tablet Portrait--------------------
+ */
+@media (min-width: 481px) and (max-width: 768px) {
+  .page-wrapper:before {
+    content: 'Tablet Portrait';
+  }
+
+  #header h1{
+    float: none;
+  }
+  
+  #header nav {
+    clear: both;
+  }
+
+  #header nav a {
+    font-size: .8em;
+    line-height: 2.8;
+  }
+  
+  aside.secondary article {
+    width: 50%;
+    float: left;
+    clear: none;
+  }
+}
+
+/**
+ * Phone -------------------
+ */
+@media (max-width: 480px) {
+  .page-wrapper:before {
+    content: 'Phone';
+  }
+
+  .page-wrapper {
+    padding: 0;
+  }
+
+  .main-header h1 {
+    font-size: 1.2em;
+  }
+  
+  #header nav li a {
+    font-size: .8em;
+    line-height: 2.8;
+  }
+}
+
+/**
+ * Tablet Portrait and lower --------------------
+ */
+@media (max-width: 768px) {
+  .main-header{
+    text-align: center;
+  }
+  
+  .main-header h1 {
+    display: inline-block;
+    float: none;
+  }
+  
+
+  #header nav li {
+    width: 50%;
+    text-align: center;
+  }
+  
+  .main-header li a {
+    font-size: .9em;
+    line-height: 2;
+  }
+}
+
+/* Embed Titillium Web Font */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 200;
+  src: local("Titillium WebThin"), local("TitilliumWeb-Thin"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr-E6O57bqL2WtN4biLacgeg.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Titillium WebLight"), local("TitilliumWeb-Light"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr2-jEQ7ixT9mykCZ8BBatAk.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Titillium Web"), local("TitilliumWeb-Regular"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/7XUFZ5tgS-tD6QamInJTcdASgiSiazNVaMZaV9DKExs.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Titillium WebSemiBold"), local("TitilliumWeb-SemiBold"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr2gCgcskKIFo40ndTrcdCiA.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Titillium WebBold"), local("TitilliumWeb-Bold"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr_fb5Q4ZioEX5fLPE_o-1oM.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 900;
+  src: local("Titillium WebBlack"), local("TitilliumWeb-Black"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr1D_gR9ziCIb2bLb6UF6jDM.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 200;
+  src: local("Titillium WebThin Italic"), local("TitilliumWeb-ThinItalic"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/RZunN20OBmkvrU7sA4GPPlDg4TuxMtsZ0wbII6ymf28.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 300;
+  src: local("Titillium WebLight Italic"), local("TitilliumWeb-LightItalic"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/RZunN20OBmkvrU7sA4GPPnIu3i5KhThI9r_JXVTVbEo.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Titillium WebItalic"), local("TitilliumWeb-Italic"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/r9OmwyQxrgzUAhaLET_KOx8qa_L3FxsPN3YZsknOt2E.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 600;
+  src: local("Titillium WebSemiBold Italic"), local("TitilliumWeb-SemiBoldItalic"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/RZunN20OBmkvrU7sA4GPPgBjfk66F-VJc8CAlorrYAk.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 700;
+  src: local("Titillium WebBold Italic"), local("TitilliumWeb-BoldItalic"), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/RZunN20OBmkvrU7sA4GPPhR2GJzKq3w6YIk4L0L9zPA.woff) format("woff");
+}
